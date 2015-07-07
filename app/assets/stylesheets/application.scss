@@ -1,0 +1,49 @@
+@import 'lib/_flat_variables';
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "flat-ui";
+@import "fontawesome";
+
+@import "lib/variables";
+@import "lib/mixins";
+
+html, body {
+  font-size: 16px;
+}
+
+.std-menu {
+
+  ul {
+
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+      position: relative;
+
+      ul {
+        display: none;
+        position: absolute;
+
+        li {
+          display: block;
+        }
+      }
+    }
+
+    .second-item {
+      margin-left: 10px;
+      padding-left: 10px;
+      border-left: 1px solid $light-border-color;
+    }
+  }
+}
+
+
+
+@import "header";
+
+@import "static_pages";
+@import "cart";

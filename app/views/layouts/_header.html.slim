@@ -1,0 +1,123 @@
+section.active-search-header.hidden-sm
+  a.close-btn href='#'
+    i.fa.fa-close
+  div.container
+    div.col-md-9.search-words
+      | I'm looking for (a) <span class='search-item' data-search-item='item'>Shirt</span> in size
+        <span class='search-item' data-search-item='size'>Medium</span> that costs between
+          $<span class='search-item' data-search-item='price_low'>0</span> and
+            $<span class='search-item' data-search-item='price_high'>100</span>.
+              The brand I want is <span class='search-item' data-search-item='brand'>J-Crew</span>.
+    div.col-md-2.col-md-offset-1
+      form.active-search-form
+        input.search-terms type='hidden' name='q'
+        inoput.btn.btn-block.btn-lg.btn-outline  type='button' Find my stuff
+.peek-container
+  .peek-arrow
+    | &nbsp;
+
+
+
+header.main-header
+  div.container-fluid
+    section.row.top-row
+      div.container
+        div.col-md-4
+          nav.std-menu.pull-left
+            ul.menu
+              li.welcome
+                | Welcome
+              li.active-search-link.second-item
+                a href='#'
+                  | Active Search <i class='fa fa-search-plus'></i>
+        div.col-md-4.logo-center
+          a.logo-link href='/'
+            = image_tag 'logo.png', class: 'header-logo img-responsive'
+        div.col-md-4
+          nav.std-menu.pull-right
+            ul.menu
+              li.dropdown.languages
+                a.dropdown-toggle href='#' data-toggle='dropdown'
+                  | English <i class='fa fa-chevron-down'></i>
+                ul.dropdown-menu
+                  li
+                    a href='#' Español
+                  li
+                    a href='#' Portugues
+              li.second-item
+                - if customer_signed_in?
+                  = link_to 'Log out', destroy_customer_session_path, method: :delete
+                - else
+                  = link_to 'Login', new_customer_session_path
+  div.container-fluid
+    section.row.nav-row
+      div.container
+        div.col-md-9
+          nav#main-navigation.mega-menu.clearfix
+            ul
+              li.home.top-level
+                = link_to 'Home', root_path
+              li.top-level
+                a href='#' Blog
+              li.dropdown.top-level
+                a.dropdown-toggle data-toggle='dropdown' role='button' href='#' Men
+                ul.dropdown-menu
+                  li
+                    a href='#' Item 1
+                  li
+                    a href='#' Item 2
+                  li
+                    a href='#' Item 3
+                  li
+                    a href='#' Item 4
+              li.top-level
+                a href='#' Women
+              li.top-level
+                a href='#' Children
+        div.col-md-3
+          div.customer-actions
+            nav.std-menu
+              ul.menu
+                li.menu-search.dropdown
+                  a.dropdown-toggle href='#' data-toggle='dropdown' <i class='fa fa-search'></i>
+                  div.dropdown-menu
+                    div.dropdown-search
+                      form.search-form.form-inline action='/' method='POST'
+                        div.input-group
+                          input.form-control type='text' placeholder='Search...'
+                          div.input-group-btn
+                            button.btn.btn-primary type='submit'
+                              i.fa.fa-search
+
+                li.customer-cart.dropdown
+                  a.dropdown-toggle href='#' data-toggle='dropdown' <i class='fa fa-shopping-cart'></i> $128.87
+                  div.dropdown-menu
+                    div.dropdown-cart
+                      div.items-in-cart
+                        | You have <span class='item-count'>2</span> items in your cart
+                      div.cart-items
+                        article.item
+                          div.image-container
+                            img.item-image src='http://placehold.it/50x50'
+                          div.content-container
+                            span.item-name Sample item 1
+                            span.price $32.95
+                          div.close-btn
+                            button.btn.btn-danger.btn-sm <i class='fa fa-trash'></i>
+                        article.item
+                          div.image-container
+                            img.item-image src='http://placehold.it/50x50'
+                          div.content-container
+                            span.item-name Sample item 2
+                            span.price $29.95
+                          div.close-btn
+                            button.btn.btn-danger.btn-sm <i class='fa fa-trash'></i>
+                      div.cart-links
+                        a.view-cart href='#' View Cart
+                        a.checkout href='#' Checkout
+
+
+                li.customer-wishlist
+                  a href='#'
+                    i.fa.fa-star
+

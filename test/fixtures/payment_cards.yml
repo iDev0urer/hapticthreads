@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  last4: 1
+  brand: MyString
+  funding: MyString
+  exp_month: 1
+  exp_year: 1
+  fingerprint: MyString
+  country: MyString
+
+two:
+  last4: 1
+  brand: MyString
+  funding: MyString
+  exp_month: 1
+  exp_year: 1
+  fingerprint: MyString
+  country: MyString

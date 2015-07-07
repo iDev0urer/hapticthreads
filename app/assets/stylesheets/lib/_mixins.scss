@@ -1,0 +1,17 @@
+@mixin nav-arrow($color, $opacity) {
+  content: " ";
+  display: block;
+  border-bottom: 8px solid $color;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: none;
+  margin-top: 2px;
+  position: absolute;
+  left: 50%;
+  margin-left: -8px;
+  opacity: $opacity;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}

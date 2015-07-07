@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CustomerTest" skipped="0" failures="0" errors="0" tests="2" assertions="2" time="0.40396023300127126">
+  <testcase name="test_Customer_should_have_password" classname="CustomerTest" assertions="1" time="0.11341749200073536">
+  </testcase>
+  <testcase name="test_Customer_should_save" classname="CustomerTest" assertions="1" time="0.2905427410005359">
+  </testcase>
+</testsuite>

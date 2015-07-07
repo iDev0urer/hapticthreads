@@ -1,0 +1,16 @@
+/ Inspired by http://neighborhood.swiftideas.com/
+doctype html
+html
+  head
+    title
+      | Fashion
+    = stylesheet_link_tag    'application', media: 'all'
+    meta[name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1"]
+    = csrf_meta_tags
+  body
+
+    = render 'layouts/header'
+
+    = yield
+
+    = javascript_include_tag 'application'

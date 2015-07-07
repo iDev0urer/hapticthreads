@@ -1,0 +1,66 @@
+.container
+  .row
+    .col-xs-12.col-md-4
+      - flash.each do |name, msg|
+        = content_tag :div, msg, class: name
+      .panel.panel-default.credit-card-box
+        .panel-heading.display-table
+          .row.display-tr
+            h3.panel-title.display-td
+              | Payment Details
+            .display-td
+              img.img-responsive.pull-right[src="http://i76.imgup.net/accepted_c22e0.png"]
+        .panel-body
+          = form_tag payment_path, class: "basic-grey", id: 'payment-form' do
+            - if false # Error catcher
+              h1.error
+                | Error occurred
+            .row
+              .col-xs-12
+                .form-group
+                  label[for="cardNumber"]
+                    | CARD NUMBER
+                  .input-group
+                    = text_field_tag :card_number, nil, class: "form-control", 'data-stripe' => "number", placeholder: 'XXXX-XXXX-XXXX-XXXX'
+                    span.input-group-addon
+                      i.fa.fa-credit-card
+            .row
+              .col-md-12
+                label[for="cardExpiry"]
+                  span.hidden-xs
+                    | EXPIRATION
+                  span.visible-xs-inline
+                    | EXP
+                  |  DATE
+            .row
+              .col-xs-6.col-md-6
+                .form-group
+                  = select_tag :exp_month, options_for_select(Date::MONTHNAMES.compact.each_with_index.map { |name,i| ["#{i+1} - #{name}", i+1] }), include_blank: false, "data-stripe" => "exp-month", class: "form-control span2"
+              .col-xs-6.col-md-6
+                .form-group
+                  = select_tag :exp_year, options_for_select((Date.today.year..(Date.today.year+10)).to_a), include_blank: false, "data-stripe" => "exp-year", class: "form-control span2"
+              .col-xs-5.col-md-5.pull-left
+                .form-group
+                  label[for="cardCVC"]
+                    | CV CODE
+                  = text_field_tag :card_verification, nil, class: "form-control", "data-stripe" => "cvv", placeholder: 'CVV2'
+            .row
+              .col-xs-12
+                button.btn.btn-success.btn-lg.btn-block[type="submit"]
+                  | Pay now
+            .row[style="display:none;"]
+              .col-xs-12
+                p.payment-errors
+      |  Subotal: 
+      strong
+        = @subtotal.to_money.format
+      br
+      |  Tax: 
+      strong
+        = @tax.to_money.format
+      br
+      |  Total: 
+      strong
+        = @total.to_money.format
+      br
+= javascript_include_tag "https://js.stripe.com/v2/"
