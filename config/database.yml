@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: fashion_production
-  username: fashion
+  database: hapticfibers
+  username: hapticfibers
   password: <%= ENV['FASHION_DATABASE_PASSWORD'] %>

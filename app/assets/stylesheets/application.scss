@@ -33,10 +33,32 @@ html, body {
       }
     }
 
-    .second-item {
+    .second-item, .third-item {
       margin-left: 10px;
       padding-left: 10px;
       border-left: 1px solid $light-border-color;
+    }
+  }
+}
+
+.no-gutter-left {
+  padding-left: 0;
+}
+
+.no-gutter-right {
+  padding-right: 0;
+}
+
+section.content-box {
+  padding: 20px 14px;
+  border: 1px solid $light-border-color;
+
+  header.content-box__header {
+
+    h2 {
+      font-size: 1.4rem;
+      margin: 0 0 10px 0;
+      padding: 0;
     }
   }
 }

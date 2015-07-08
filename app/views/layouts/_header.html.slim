@@ -38,16 +38,21 @@ header.main-header
             ul.menu
               li.dropdown.languages
                 a.dropdown-toggle href='#' data-toggle='dropdown'
-                  | English <i class='fa fa-chevron-down'></i>
+                  | $ USD <i class='fa fa-chevron-down'></i>
                 ul.dropdown-menu
                   li
-                    a href='#' Español
+                    a href='#' &euro; EUR
                   li
-                    a href='#' Portugues
-              li.second-item
-                - if customer_signed_in?
+                    a href='#' $ MXN
+                  li
+                    a href='#' R$ BRL
+              - if customer_signed_in?
+                li.second-item
                   = link_to 'Log out', destroy_customer_session_path, method: :delete
-                - else
+                li.third-item
+                  a href='#' My Account
+              - else
+                li.second-item
                   = link_to 'Login', new_customer_session_path
   div.container-fluid
     section.row.nav-row
