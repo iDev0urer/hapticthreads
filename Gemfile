@@ -35,6 +35,7 @@ gem 'monetize'
 gem 'stripe'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'rollbar', '~> 1.5.3'
 
 group :development do
   gem 'byebug'
