@@ -58,11 +58,11 @@ dependencies:
 #           RACK_ENV: test
 
 ## Customize deployment commands
-deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: hapticthreads
+#deployment:
+#  staging:
+#    branch: master
+#    heroku:
+#      appname: hapticthreads
 
 
 ## Custom notifications
