@@ -3,11 +3,8 @@ class CartController < ApplicationController
   end
 
   def checkout
-    current_customer.active_order.update_totals!
-    @subtotal = current_customer.active_order.subtotal
-    @tax = current_customer.active_order.tax
-    @total = current_customer.active_order.total
-
+    @active_order = current_customer.active_order if customer_signed_in?
+    current_customer.active_order.update_totals! if @active_order
   end
 
   def status

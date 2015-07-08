@@ -55,7 +55,8 @@ class Customer < ActiveRecord::Base
   end
 
   def active_order
-    self.orders.where(state: 'in_progress').last
+    active = self.orders.where(state: 'in_progress').last
+    active ? active : false
   end
 
   has_many :addresses, dependent: :destroy

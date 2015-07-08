@@ -51,16 +51,17 @@
             .row[style="display:none;"]
               .col-xs-12
                 p.payment-errors
+    - if @active_order
       |  Subotal: 
       strong
-        = @subtotal.to_money.format
+        = @active_order.subtotal.to_money.format
       br
       |  Tax: 
       strong
-        = @tax.to_money.format
+        = @active_order.tax.to_money.format
       br
       |  Total: 
       strong
-        = @total.to_money.format
+        = @active_order.total.to_money.format
       br
 = javascript_include_tag "https://js.stripe.com/v2/"
