@@ -64,6 +64,7 @@ deployment:
     heroku:
       appname: hapticthreads
 
+
 ## Custom notifications
 # notify:
 #   webhooks:
