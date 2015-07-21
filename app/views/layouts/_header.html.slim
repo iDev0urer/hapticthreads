@@ -13,7 +13,7 @@ section.active-search-header.hidden-sm
         input.search-terms type='hidden' name='q'
         inoput.btn.btn-block.btn-lg.btn-outline  type='button' Find my stuff
 .peek-container
-  .peek-arrow
+  .peek-arrow.hidden-sm.hidden-xs
     | &nbsp;
 
 
@@ -38,14 +38,14 @@ header.main-header
             ul.menu
               li.dropdown.languages
                 a.dropdown-toggle href='#' data-toggle='dropdown'
-                  | $ USD <i class='fa fa-chevron-down'></i>
+                  | USD <i class='fa fa-chevron-down'></i>
                 ul.dropdown-menu
                   li
-                    a href='#' &euro; EUR
+                    a href='#' EUR
                   li
-                    a href='#' $ MXN
+                    a href='#' MXN
                   li
-                    a href='#' R$ BRL
+                    a href='#' BRL
               - if customer_signed_in?
                 li.second-item
                   = link_to 'Log out', destroy_customer_session_path, method: :delete
@@ -125,4 +125,3 @@ header.main-header
                 li.customer-wishlist
                   a href='#'
                     i.fa.fa-star
-

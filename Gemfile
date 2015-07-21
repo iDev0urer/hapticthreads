@@ -11,6 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.0'
 gem 'slim'
 gem 'slim-rails'
+gem 'breadcrumbs_on_rails'
 
 gem 'devise'
 gem 'aasm'

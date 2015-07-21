@@ -1,0 +1,8 @@
+div.breadcrumb_bar
+  div.container
+    div.row
+      div.col-md-8
+        h2
+          = @page_title || 'Page title'
+      div.breadcrumbs.col-md-4
+        = render_breadcrumbs :separator => ' / '

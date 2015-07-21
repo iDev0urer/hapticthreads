@@ -63,6 +63,26 @@ section.content-box {
   }
 }
 
+.breadcrumb_bar {
+  padding: 15px 0;
+  background-color: #f7f7f7;
+  border-color: #e4e4e4;
+
+  -webkit-box-shadow: inset 0px 2px 10px 0px rgba(50, 50, 50, 0.42);
+  -moz-box-shadow:    inset 0px 2px 10px 0px rgba(50, 50, 50, 0.42);
+  box-shadow:         inset 0px 2px 10px 0px rgba(50, 50, 50, 0.42);
+
+  margin-bottom: 20px;
+
+  .breadcrumbs {
+    text-align: right;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+}
 
 
 @import "header";

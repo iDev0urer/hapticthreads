@@ -10,7 +10,7 @@ html
   body
 
     = render 'layouts/header'
-
+    = render 'layouts/breadcrumb_bar' unless @no_breadcrumbs
     = yield
 
     = javascript_include_tag 'application'
